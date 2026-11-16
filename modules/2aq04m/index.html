@@ -1,0 +1,105 @@
+<footer class="modulex-alt-tabela{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-alt-tabela-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</footer>
+
+<style>
+  /* alt-tabela — Mahalle dükkânı dili: marka asılı bir tabela (zincir + sallanma, hover'da durur), bilgi bir vitrinin camlarında — bölme sayısı tekse son cam tam genişliğe yayılır, boş cam kalmaz; lokanta, kebapçı, çay bahçesi gibi sokak işletmeleri için. */
+  .modulex-alt-tabela { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-alt-tabela *, .modulex-alt-tabela *::before, .modulex-alt-tabela *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-alt-tabela :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-alt-tabela :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-alt-tabela :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-alt-tabela :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-alt-tabela img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-alt-tabela) img { height: auto; }
+  .modulex-alt-tabela [hidden] { display: none !important; }
+  .modulex-alt-tabela :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-alt-tabela :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-alt-tabela-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-alt-tabela-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-alt-tabela--bassiz .modulex-alt-tabela-bas { display: none; }
+  .modulex-alt-tabela-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-tabela-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-alt-tabela-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-alt-tabela-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-alt-tabela-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-alt-tabela-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-tabela-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-alt-tabela-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-alt-tabela-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-alt-tabela-bag { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-alt-tabela-bag:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-alt-tabela-bag[aria-current="page"] { color: --accentInk--; font-weight: 700; }
+  .modulex-alt-tabela-logo { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+  .modulex-alt-tabela-logo img { width: auto; max-height: --logoH--; }
+  .modulex-alt-tabela-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-alt-tabela-bbaslik { margin-block-end: 14px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-alt-tabela-sayfalar, .modulex-alt-tabela-baglantilar, .modulex-alt-tabela-iletisim, .modulex-alt-tabela-yasal { display: grid; gap: 9px; }
+  .modulex-alt-tabela-il { display: flex; align-items: flex-start; gap: 10px; }
+  .modulex-alt-tabela-il-ic { display: grid; gap: 2px; }
+  .modulex-alt-tabela-il-etiket { color: --muted--; font-size: 0.8rem; }
+  .modulex-alt-tabela-il-ikon { flex: none; color: --accentInk--; font-size: 20px; }
+  .modulex-alt-tabela-saatler { display: grid; gap: 6px; }
+  .modulex-alt-tabela-saat { display: flex; justify-content: space-between; gap: 16px; }
+  .modulex-alt-tabela-saat dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .modulex-alt-tabela-sosyal { display: flex; flex-wrap: wrap; gap: 10px; }
+  .modulex-alt-tabela-sosyal-a { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid --cizgi--; border-radius: 50%; color: inherit; font-size: 18px; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-alt-tabela-sosyal-a:hover { border-color: --accent--; background: --accent--; color: --accentText--; transform: translateY(-2px); }
+  .modulex-alt-tabela-hakkinda { max-width: 46ch; color: --muted--; }
+  .modulex-alt-tabela-telif { display: flex; flex-wrap: wrap; gap: 4px 14px; color: --muted--; font-size: 0.9rem; }
+  .modulex-alt-tabela-dil:empty { display: none; }
+  .modulex-alt-tabela-yukari { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: --accent--; color: --accentText--; text-decoration: none; transition: transform 0.25s ease; }
+  .modulex-alt-tabela-yukari:hover { transform: translateY(-3px); }
+  .modulex-alt-tabela-bulten { display: grid; gap: 8px; }
+  .modulex-alt-tabela-nl-etiket { font-size: 0.9rem; font-weight: 700; }
+  .modulex-alt-tabela-nl-satir { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-alt-tabela-nl-girdi { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 10px 18px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; }
+  .modulex-alt-tabela-nl-dugme { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: --accent--; color: --accentText--; font: inherit; font-weight: 700; transition: transform 0.2s ease; }
+  .modulex-alt-tabela-nl-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-tabela-nl-dugme .material-symbols-outlined { font-size: 18px; }
+  .modulex-alt-tabela-nl-durum:empty { display: none; }
+  .modulex-alt-tabela-nl-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .modulex-alt-tabela-nl-metin { color: --muted--; }
+
+  .modulex-alt-tabela-tb-cubuk { position: relative; z-index: 1; width: min(560px, 88%); height: 10px; margin-inline: auto; border-radius: 999px; background: --text--; }
+  .modulex-alt-tabela-tb-asma { display: flex; justify-content: center; padding-block-start: 44px; margin-block-end: clamp(36px, 5vw, 60px); }
+  .modulex-alt-tabela-tb-levha { position: relative; display: grid; justify-items: center; gap: 14px; width: min(480px, 100%); padding: 28px clamp(20px, 4vw, 40px); border: 4px solid --text--; border-radius: 16px; background: --bg--; text-align: center; box-shadow: 0 26px 40px -30px color-mix(in srgb, --text-- 70%, transparent); transform-origin: 50% -44px; animation: modulex-alt-tabela-tb-salla 5s ease-in-out infinite alternate; }
+  .modulex-alt-tabela-tb-asma:hover .modulex-alt-tabela-tb-levha { animation-play-state: paused; }
+  @keyframes modulex-alt-tabela-tb-salla { from { transform: rotate(-1.4deg); } to { transform: rotate(1.4deg); } }
+  .modulex-alt-tabela-tb-levha::before, .modulex-alt-tabela-tb-levha::after { content: ""; position: absolute; inset-block-end: 100%; width: 4px; height: 48px; background: repeating-linear-gradient(to bottom, --muted-- 0 6px, transparent 6px 9px); }
+  .modulex-alt-tabela-tb-levha::before { inset-inline-start: 20%; }
+  .modulex-alt-tabela-tb-levha::after { inset-inline-end: 20%; }
+  .modulex-alt-tabela-tb-levha .modulex-alt-tabela-ad { font-size: clamp(1.6rem, 3.6vw, 2.4rem); }
+  .modulex-alt-tabela-tb-not { max-width: 40ch; color: --muted--; }
+  .modulex-alt-tabela-tb-vitrin { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px; border: 6px solid --text--; border-start-start-radius: 12px; border-start-end-radius: 12px; background: --text--; }
+  .modulex-alt-tabela-blok--tb { display: grid; align-content: start; gap: 4px; padding: 24px 22px 28px; background: --kartBg--; transition: background-color 0.3s ease; }
+  .modulex-alt-tabela-blok--tb:hover { background-color: color-mix(in srgb, --accent-- 8%, --kartBg--); }
+  .modulex-alt-tabela-tb-kaldirim { height: 14px; background: repeating-linear-gradient(-45deg, --accent-- 0 12px, --bg-- 12px 24px); }
+  .modulex-alt-tabela-tb-dip { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; padding-block-start: 22px; }
+  .modulex-alt-tabela-tb-dip .modulex-alt-tabela-telif { margin-inline-start: auto; }
+  .modulex-alt-tabela-tb-yasal { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.9rem; }
+  @media (max-width: 1024px) {
+    .modulex-alt-tabela-tb-vitrin { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .modulex-alt-tabela-tb-vitrin > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  }
+  @media (max-width: 768px) {
+    .modulex-alt-tabela-tb-vitrin { grid-template-columns: minmax(0, 1fr); }
+    .modulex-alt-tabela-tb-dip .modulex-alt-tabela-telif { margin-inline-start: 0; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-tabela :is(.modulex-alt-tabela-baslik, .modulex-alt-tabela-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-tabela-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-alt-tabela { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-alt-tabela *, .modulex-alt-tabela *::before, .modulex-alt-tabela *::after { animation: none !important; transition: none !important; }
+  }
+</style>

@@ -1,0 +1,104 @@
+<section class="modulex-deger-mektup{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-deger-mektup-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* deger-mektup — deger-manifesto dev cümle + ızgaradır, deger-dergi iki sütunlu editoryal metindir; bu modül başlık bloğunu kâğıdın içine alan tek belge iskeletidir (pul, katlama izleri, satır içi başlıklı numaralı paragraflar, imza bloğu) — kart ya da ızgara yok. */
+  .modulex-deger-mektup { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-deger-mektup *, .modulex-deger-mektup *::before, .modulex-deger-mektup *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-deger-mektup :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-deger-mektup :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-deger-mektup :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-deger-mektup :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-deger-mektup img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-deger-mektup) img { height: auto; }
+  .modulex-deger-mektup [hidden] { display: none !important; }
+  .modulex-deger-mektup :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-deger-mektup :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-deger-mektup-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-deger-mektup-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-deger-mektup--bassiz .modulex-deger-mektup-bas { display: none; }
+  .modulex-deger-mektup-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-deger-mektup-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-deger-mektup-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-deger-mektup-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-deger-mektup-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-deger-mektup-dugme:hover { transform: translateY(-2px); }
+  .modulex-deger-mektup-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-deger-mektup-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-deger-mektup-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-deger-mektup-masa { position: relative; display: grid; justify-items: center; padding-block: 6px; isolation: isolate; }
+  .modulex-deger-mektup-masa::before { content: ""; position: absolute; inset-block: 18px; inset-inline: calc((100% - min(100%, 780px)) / 2 + 10px); z-index: -1; border: 1px solid --cizgi--; background: color-mix(in srgb, --accent-- 8%, --kartBg--); transform: rotate(-2.4deg); transition: transform 0.6s ease; }
+  .modulex-deger-mektup-masa:hover::before { transform: rotate(-4deg); }
+  .modulex-deger-mektup-kagit { position: relative; width: min(100%, 780px); padding-block: clamp(40px, 6vw, 72px); padding-inline: clamp(26px, 7vw, 88px); border-inline-start: 3px double color-mix(in srgb, --accent-- 45%, transparent); background-color: --kartBg--; background-image: linear-gradient(180deg, transparent calc(33.3% - 1px), color-mix(in srgb, --text-- 5%, transparent) 33.3%, transparent calc(33.3% + 1px), transparent calc(66.6% - 1px), color-mix(in srgb, --text-- 5%, transparent) 66.6%, transparent calc(66.6% + 1px)); box-shadow: 0 1px 0 --cizgi--, 0 40px 60px -44px color-mix(in srgb, --text-- 70%, transparent); transition: box-shadow 0.6s ease; }
+  .modulex-deger-mektup-masa:hover .modulex-deger-mektup-kagit { box-shadow: 0 1px 0 --cizgi--, 0 50px 70px -44px color-mix(in srgb, --text-- 80%, transparent); }
+  .modulex-deger-mektup-pul { position: absolute; inset-block-start: 26px; inset-inline-end: 26px; display: grid; place-items: center; width: 70px; height: 84px; background: --accent--; color: --accentText--; outline: 5px dotted --kartBg--; outline-offset: -3px; transform: rotate(5deg); }
+  .modulex-deger-mektup-pikon { font-size: 34px; }
+  .modulex-deger-mektup-damga { position: absolute; inset-block-start: 50px; inset-inline-end: 70px; width: 92px; height: 92px; border: 2px dashed color-mix(in srgb, --accentInk-- 60%, transparent); border-radius: 50%; transform: rotate(-12deg); pointer-events: none; }
+  .modulex-deger-mektup-tarih { margin-block-end: 28px; padding-inline-end: 110px; color: --muted--; font-size: 0.9rem; font-style: italic; letter-spacing: 0.02em; }
+  .modulex-deger-mektup-hitap { margin-block-end: 16px; padding-inline-end: 110px; font-family: var(--mx-font-serif, var(--mx-font-heading, serif)); font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 700; line-height: 1.2; }
+  .modulex-deger-mektup-giris { margin-block-end: 26px; color: --muted--; font-size: 1.08rem; line-height: 1.8; }
+  .modulex-deger-mektup-maddeler { display: grid; gap: 18px; }
+  .modulex-deger-mektup-madde { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 10px; }
+  .modulex-deger-mektup-mno { padding-block-start: 4px; color: --accentInk--; font-family: var(--mx-font-serif, var(--mx-font-heading, serif)); font-size: 0.95rem; font-style: italic; font-weight: 700; }
+  .modulex-deger-mektup-paragraf { line-height: 1.8; }
+  .modulex-deger-mektup-paragraf > * { display: inline; }
+  .modulex-deger-mektup-kbaslik { font-size: 1.08rem; font-weight: 800; }
+  .modulex-deger-mektup-kbaslik::after { content: " — "; color: --accentInk--; font-weight: 400; }
+  .modulex-deger-mektup-paragraf .modulex-deger-mektup-kmetin { color: --muted--; font-size: 1.02rem; }
+  .modulex-deger-mektup-imza { display: grid; justify-items: start; gap: 0; width: fit-content; margin-block-start: 40px; margin-inline-start: auto; }
+  .modulex-deger-mektup-iad { color: --accentInk--; font-family: var(--mx-font-script, "Segoe Script", "Brush Script MT", cursive); font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1.2; }
+  .modulex-deger-mektup-cizgi { width: 100%; min-width: 180px; height: 22px; }
+  [dir="rtl"] .modulex-deger-mektup-cizgi { transform: scaleX(-1); }
+  .modulex-deger-mektup-cizgi path { fill: none; stroke: --accent--; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 300; stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s ease 0.3s; }
+  .modulex-deger-mektup--hazir:not(.modulex-deger-mektup--gor) .modulex-deger-mektup-cizgi path { stroke-dashoffset: 300; }
+  .modulex-deger-mektup-unvan { color: --muted--; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  @media (max-width: 768px) {
+    .modulex-deger-mektup-kagit { padding-inline: 20px; }
+    .modulex-deger-mektup-masa::before { inset-inline: 6px; }
+    .modulex-deger-mektup-pul { inset-block-start: 16px; inset-inline-end: 16px; width: 54px; height: 66px; }
+    .modulex-deger-mektup-pikon { font-size: 26px; }
+    .modulex-deger-mektup-damga { inset-block-start: 34px; inset-inline-end: 44px; width: 70px; height: 70px; }
+    .modulex-deger-mektup-tarih, .modulex-deger-mektup-hitap { padding-inline-end: 74px; }
+    .modulex-deger-mektup-madde { grid-template-columns: 28px minmax(0, 1fr); }
+  }
+  .modulex-deger-mektup-bag { color: inherit; text-decoration: none; }
+  .modulex-deger-mektup-bag::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+  .modulex-deger-mektup-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-deger-mektup :is(.modulex-deger-mektup-baslik, .modulex-deger-mektup-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-deger-mektup-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-deger-mektup { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-deger-mektup *, .modulex-deger-mektup *::before, .modulex-deger-mektup *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-deger-mektup";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const gozlem = (s, P, az) => {
+        const gor = () => s.classList.add(P + "--gor");
+        s.classList.add(P + "--hazir");
+        if (az || !("IntersectionObserver" in window)) { gor(); return; }
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { gor(); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(s);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      gozlem(s, P, az);
+    });
+  })();
+</script>

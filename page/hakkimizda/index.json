@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Mevsim",
+    "en": "Seasons",
+    "ar": "المواسم"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "calendar_month",
+  "desing": {
+    "header": [],
+    "body": [
+      "qx12cr",
+      "wfs57s"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Mevsim takvimi ve kurucunun mektubu (kurgusal).",
+    "en": "The seasonal calendar and the founder’s letter (fictional).",
+    "ar": "تقويم المواسم ورسالة المؤسِّسة (افتراضي)."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Mevsim",
+    "en": "Seasons",
+    "ar": "المواسم"
+  },
+  "keyword": {
+    "tr": "mevsim, takvim",
+    "en": "season, calendar",
+    "ar": "موسم، تقويم"
+  },
+  "text": {},
+  "update": "2026-11-16T20:22:42.307Z",
+  "date": "2026-10-30"
+}

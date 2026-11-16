@@ -1,0 +1,93 @@
+<section class="modulex-yorum-isletme-yanit{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-yorum-isletme-yanit-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* yorum-isletme-yanit — Diyalog/konu zinciri iskeleti: yorum-sohbet-balon farklı kişilerin balonlarını iki yana dizer, burada her yorumun altına tek bir resmî işletme yanıtı L biçimli bağlantıyla asılır (Google/harita yanıtı mantığı); kart + girintili yanıt kutusu çifti. */
+  .modulex-yorum-isletme-yanit { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-yorum-isletme-yanit *, .modulex-yorum-isletme-yanit *::before, .modulex-yorum-isletme-yanit *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-yorum-isletme-yanit :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-yorum-isletme-yanit :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-yorum-isletme-yanit :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-yorum-isletme-yanit :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-yorum-isletme-yanit img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-yorum-isletme-yanit) img { height: auto; }
+  .modulex-yorum-isletme-yanit [hidden] { display: none !important; }
+  .modulex-yorum-isletme-yanit :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-yorum-isletme-yanit :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-yorum-isletme-yanit-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-yorum-isletme-yanit-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-yorum-isletme-yanit--bassiz .modulex-yorum-isletme-yanit-bas { display: none; }
+  .modulex-yorum-isletme-yanit-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-yorum-isletme-yanit-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-yorum-isletme-yanit-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-yorum-isletme-yanit-ic { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .modulex-yorum-isletme-yanit-bas { position: sticky; inset-block-start: 96px; margin: 0; }
+  .modulex-yorum-isletme-yanit--bassiz .modulex-yorum-isletme-yanit-ic { grid-template-columns: minmax(0, 1fr); }
+  .modulex-yorum-isletme-yanit-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-yorum-isletme-yanit-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-yorum-isletme-yanit-dugme:hover { transform: translateY(-2px); }
+  .modulex-yorum-isletme-yanit-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-yorum-isletme-yanit-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-yorum-isletme-yanit-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-yorum-isletme-yanit-ad { font-weight: 700; }
+  .modulex-yorum-isletme-yanit-kisi { display: grid; gap: 2px; min-width: 0; }
+  .modulex-yorum-isletme-yanit-unvan { color: --muted--; font-size: 0.88rem; line-height: 1.45; }
+  .modulex-yorum-isletme-yanit-puan { display: flex; gap: 2px; color: --yildiz--; }
+  .modulex-yorum-isletme-yanit-puan .material-symbols-outlined { font-size: 20px; font-variation-settings: "FILL" 1; }
+  .modulex-yorum-isletme-yanit-yildiz--bos { opacity: 0.3; }
+  .modulex-yorum-isletme-yanit-avatar { flex: none; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .modulex-yorum-isletme-yanit-harf { display: inline-grid; place-items: center; background: color-mix(in srgb, --accent-- 18%, --kartBg--); color: --accentInk--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-yorum-isletme-yanit-yazar { display: flex; align-items: center; gap: 12px; }
+
+  .modulex-yorum-isletme-yanit-liste { display: grid; gap: 28px; }
+  .modulex-yorum-isletme-yanit-zincir { display: grid; }
+  .modulex-yorum-isletme-yanit-yorum { position: relative; z-index: 1; display: grid; gap: 12px; padding: 22px 24px; border: 1px solid --cizgi--; border-radius: --yuvarlak--; background: --bg--; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+  .modulex-yorum-isletme-yanit-zincir:hover .modulex-yorum-isletme-yanit-yorum { border-color: color-mix(in srgb, --accent-- 45%, --cizgi--); box-shadow: 0 18px 34px -28px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-yorum-isletme-yanit-ybas { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+  .modulex-yorum-isletme-yanit-ybas .modulex-yorum-isletme-yanit-puan { margin-inline-start: auto; }
+  .modulex-yorum-isletme-yanit-puan .material-symbols-outlined { font-size: 18px; }
+  .modulex-yorum-isletme-yanit-avatar { width: 44px; height: 44px; font-size: 0.85rem; }
+  .modulex-yorum-isletme-yanit-kbaslik { font-size: 1.06rem; font-weight: 750; line-height: 1.35; }
+  .modulex-yorum-isletme-yanit-alinti { line-height: 1.7; }
+  .modulex-yorum-isletme-yanit-meta { color: --muted--; font-size: 0.82rem; }
+  .modulex-yorum-isletme-yanit-yanit { display: grid; grid-template-columns: 77px minmax(0, 1fr); }
+  .modulex-yorum-isletme-yanit-bag { justify-self: end; width: 30px; height: 52px; margin-block-start: -1px; border-inline-start: 2px solid --cizgi--; border-block-end: 2px solid --cizgi--; border-end-start-radius: 16px; transition: border-color 0.3s ease; }
+  .modulex-yorum-isletme-yanit-zincir:hover .modulex-yorum-isletme-yanit-bag { border-color: --accent--; }
+  .modulex-yorum-isletme-yanit-ykutu { display: grid; gap: 8px; margin-block-start: 24px; padding: 16px 20px; border-radius: --yuvarlak--; border-start-start-radius: 4px; background: --kartBg--; transition: transform 0.3s ease; }
+  .modulex-yorum-isletme-yanit-zincir:hover .modulex-yorum-isletme-yanit-ykutu { transform: translateX(4px); }
+  [dir="rtl"] .modulex-yorum-isletme-yanit-zincir:hover .modulex-yorum-isletme-yanit-ykutu { transform: translateX(-4px); }
+  .modulex-yorum-isletme-yanit-ykim { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 0.9rem; }
+  .modulex-yorum-isletme-yanit-rozet { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: --accent--; color: --accentText--; font-size: 18px; }
+  .modulex-yorum-isletme-yanit-isl { font-weight: 750; }
+  .modulex-yorum-isletme-yanit-yetiket { padding: 2px 9px; border-radius: 99px; background: color-mix(in srgb, --accent-- 12%, --kartBg--); color: --accentInk--; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-yorum-isletme-yanit-ytarih { margin-inline-start: auto; color: --muted--; font-size: 0.8rem; }
+  .modulex-yorum-isletme-yanit-ymetin { color: --text--; font-size: 0.96rem; line-height: 1.65; }
+  @media (max-width: 768px) {
+    .modulex-yorum-isletme-yanit-yorum { padding: 18px; }
+    .modulex-yorum-isletme-yanit-avatar { width: 36px; height: 36px; font-size: 0.75rem; }
+    .modulex-yorum-isletme-yanit-yanit { grid-template-columns: 52px minmax(0, 1fr); }
+    .modulex-yorum-isletme-yanit-bag { width: 15px; }
+    .modulex-yorum-isletme-yanit-ykutu { padding: 14px 16px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-isletme-yanit :is(.modulex-yorum-isletme-yanit-baslik, .modulex-yorum-isletme-yanit-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-isletme-yanit-baslik { line-height: 1.35; }
+  @media (max-width: 1024px) {
+    .modulex-yorum-isletme-yanit-ic { grid-template-columns: minmax(0, 1fr); }
+    .modulex-yorum-isletme-yanit-bas { position: static; margin-block-end: 32px; }
+  }
+  @media (max-width: 768px) {
+    .modulex-yorum-isletme-yanit { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-yorum-isletme-yanit *, .modulex-yorum-isletme-yanit *::before, .modulex-yorum-isletme-yanit *::after { animation: none !important; transition: none !important; }
+  }
+</style>

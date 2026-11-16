@@ -1,0 +1,40 @@
+{
+  "id": "29e95ma50x",
+  "name": {
+    "tr": "Menü",
+    "en": "Menu",
+    "ar": "القائمة"
+  },
+  "description": {
+    "tr": "Günün tahtası ve misafir yorumları; fiyatlar örnektir.",
+    "en": "Today’s board and guest reviews; prices are examples.",
+    "ar": "لوح اليوم وتقييمات الضيوف؛ الأسعار نموذجية."
+  },
+  "keyword": {
+    "tr": "günün menüsü, ev yemeği, fiyat",
+    "en": "daily menu, home cooking, price",
+    "ar": "قائمة اليوم، أكل منزلي، سعر"
+  },
+  "path": "hizmetler",
+  "icon": "restaurant_menu",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "nx7n32",
+      "da55ot"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Menü",
+    "en": "Menu",
+    "ar": "القائمة"
+  },
+  "date": "2026-11-16T20:19:42.430Z",
+  "update": "2026-11-16T20:22:42.303Z"
+}

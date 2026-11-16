@@ -1,0 +1,76 @@
+<section class="modulex-hizmet-menu-tahta{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-hizmet-menu-tahta-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* hizmet-menu-tahta — hizmet-satir-tablo sütun hizalı karşılaştırma tablosu, hizmet-dev-liste afiş tipografili satırlardır; bu modül esnaf menü panosu dilidir — çerçeveli tahta zemin, CSS sütun akışı (columns), noktalı fiyat kılavuzu ve öneri etiketi; kart yok. */
+  .modulex-hizmet-menu-tahta { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-hizmet-menu-tahta *, .modulex-hizmet-menu-tahta *::before, .modulex-hizmet-menu-tahta *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-hizmet-menu-tahta :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-hizmet-menu-tahta :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-hizmet-menu-tahta :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-hizmet-menu-tahta :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-hizmet-menu-tahta img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-hizmet-menu-tahta) img { height: auto; }
+  .modulex-hizmet-menu-tahta [hidden] { display: none !important; }
+  .modulex-hizmet-menu-tahta :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-hizmet-menu-tahta :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-hizmet-menu-tahta-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-hizmet-menu-tahta-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-hizmet-menu-tahta--bassiz .modulex-hizmet-menu-tahta-bas { display: none; }
+  .modulex-hizmet-menu-tahta-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-hizmet-menu-tahta-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-hizmet-menu-tahta-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-hizmet-menu-tahta-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-hizmet-menu-tahta-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-hizmet-menu-tahta-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-hizmet-menu-tahta-dugme:hover { transform: translateY(-2px); }
+  .modulex-hizmet-menu-tahta-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-hizmet-menu-tahta-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-hizmet-menu-tahta-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-hizmet-menu-tahta-tahta { position: relative; padding: clamp(26px, 4.5vw, 56px); border: clamp(10px, 1.4vw, 16px) solid color-mix(in srgb, --accent-- 28%, --bg--); border-radius: 10px; background-color: color-mix(in srgb, --bg-- 88%, --accent--); background-image: radial-gradient(ellipse at 20% 15%, color-mix(in srgb, --text-- 7%, transparent), transparent 55%), radial-gradient(ellipse at 80% 85%, color-mix(in srgb, --text-- 5%, transparent), transparent 50%); box-shadow: inset 0 0 0 2px color-mix(in srgb, --text-- 10%, transparent), 0 24px 40px -28px color-mix(in srgb, --bg-- 90%, transparent); }
+  .modulex-hizmet-menu-tahta-kalemler { columns: 2 320px; column-gap: clamp(32px, 5vw, 72px); column-rule: 1px dashed color-mix(in srgb, --text-- 18%, transparent); }
+  .modulex-hizmet-menu-tahta-kalem { position: relative; display: grid; gap: 6px; margin-block-end: 26px; break-inside: avoid; }
+  .modulex-hizmet-menu-tahta-ksatir { display: flex; align-items: baseline; gap: 10px; }
+  .modulex-hizmet-menu-tahta-tikon { flex: none; align-self: center; color: --accentInk--; font-size: 24px; transition: transform 0.35s ease; }
+  .modulex-hizmet-menu-tahta-kalem:hover .modulex-hizmet-menu-tahta-tikon { transform: rotate(-12deg) scale(1.12); }
+  .modulex-hizmet-menu-tahta-ksatir .modulex-hizmet-menu-tahta-kbaslik { flex: 0 1 auto; font-size: 1.2rem; font-weight: 750; letter-spacing: 0.01em; background-image: linear-gradient(--accent--, --accent--); background-position: 0 100%; background-repeat: no-repeat; background-size: 0 2px; transition: background-size 0.45s ease; }
+  [dir="rtl"] .modulex-hizmet-menu-tahta-ksatir .modulex-hizmet-menu-tahta-kbaslik { background-position: 100% 100%; }
+  .modulex-hizmet-menu-tahta-kalem:hover .modulex-hizmet-menu-tahta-kbaslik { background-size: 100% 2px; }
+  .modulex-hizmet-menu-tahta-kilavuz { flex: 1 1 24px; min-width: 24px; border-block-end: 3px dotted color-mix(in srgb, --text-- 35%, transparent); transform: translateY(-5px); }
+  .modulex-hizmet-menu-tahta-tfiyat { flex: none; color: --accentInk--; font-size: 1.15rem; font-weight: 800; font-style: italic; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .modulex-hizmet-menu-tahta-kalem .modulex-hizmet-menu-tahta-kmetin { color: --muted--; font-size: 0.93rem; line-height: 1.6; }
+  .modulex-hizmet-menu-tahta-icindekiler { display: flex; flex-wrap: wrap; gap: 2px 8px; color: color-mix(in srgb, --text-- 80%, --bg--); font-size: 0.86rem; font-style: italic; }
+  .modulex-hizmet-menu-tahta-ayrac { color: --accentInk--; font-style: normal; font-weight: 800; }
+  .modulex-hizmet-menu-tahta-oneri { justify-self: start; margin-block-end: 4px; padding: 3px 12px; border: 2px solid --accent--; border-radius: 6px; color: --accentInk--; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transform: rotate(-3deg); transition: transform 0.3s ease; }
+  .modulex-hizmet-menu-tahta-kalem--oneri:hover .modulex-hizmet-menu-tahta-oneri { transform: rotate(0deg) scale(1.04); }
+  @media (max-width: 768px) {
+    .modulex-hizmet-menu-tahta-tahta { padding: 22px 16px; border-width: 8px; }
+    .modulex-hizmet-menu-tahta-kalemler { columns: 1; }
+    .modulex-hizmet-menu-tahta-ksatir .modulex-hizmet-menu-tahta-kbaslik { font-size: 1.08rem; }
+    .modulex-hizmet-menu-tahta-tfiyat { font-size: 1.02rem; }
+  }
+  .modulex-hizmet-menu-tahta-git { position: relative; display: inline-flex; align-items: center; gap: 6px; width: fit-content; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.25s ease; }
+  .modulex-hizmet-menu-tahta-git:hover { gap: 10px; }
+  .modulex-hizmet-menu-tahta-git .material-symbols-outlined { font-size: 18px; }
+  .modulex-hizmet-menu-tahta-maddeler { display: grid; gap: 6px; }
+  .modulex-hizmet-menu-tahta-maddeler li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.93rem; }
+  .modulex-hizmet-menu-tahta-maddeler .material-symbols-outlined { flex: none; margin-block-start: 1px; color: --accentInk--; font-size: 18px; }
+  .modulex-hizmet-menu-tahta-fiyat { color: --accentInk--; font-weight: 800; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-hizmet-menu-tahta :is(.modulex-hizmet-menu-tahta-baslik, .modulex-hizmet-menu-tahta-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-hizmet-menu-tahta-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-hizmet-menu-tahta { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-hizmet-menu-tahta *, .modulex-hizmet-menu-tahta *::before, .modulex-hizmet-menu-tahta *::after { animation: none !important; transition: none !important; }
+  }
+</style>

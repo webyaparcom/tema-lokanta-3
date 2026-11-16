@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Üç Kapı Lokantası: Bursa’da üç şubeli ev yemeği lokantası; şube adresleri, günün kara tahtası, mevsim takvimi ve örnek fiyatlar. Demo site; içerik kurgusaldır.",
+    "en": "Üç Kapı Lokantası: a home-cooking restaurant with three branches in Bursa; branch addresses, today’s chalkboard, a seasonal calendar and example prices. Demo site; content is fictional.",
+    "ar": "لوكانتا أوتش كابي: مطعم أكل منزلي له ثلاثة فروع في بورصة؛ عناوين الفروع ولوح اليوم وتقويم المواسم وأسعار نموذجية. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "lokanta, ev yemeği, şube, Bursa, günün menüsü, Mudanya",
+    "en": "restaurant, home cooking, branches, Bursa, daily menu, Mudanya",
+    "ar": "مطعم، أكل منزلي، فروع، بورصة، قائمة اليوم، مودانيا"
+  },
+  "category": "Kurumsal",
+  "name": "Üç Kapı Lokantası",
+  "domain": "lokanta-3.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "source-sans-3",
+    "heading": "fraunces",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-naskh-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#217880",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "4px",
+    "--mx-radius-md": "6px",
+    "--mx-radius-lg": "8px",
+    "--mx-radius-xl": "11px"
+  },
+  "icon": "icon.png"
+}

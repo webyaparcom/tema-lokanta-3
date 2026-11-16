@@ -1,0 +1,57 @@
+{
+  "name": "İletişim Şube Sekme — dosya klasörü sekmeleriyle şube adresleri, ortak kanallar altta",
+  "description": "Başlığın altında klasör sırtı gibi sekmeler: her adres satırı (desing adres + data satırlarındaki konum ikonlu adresler; baslik = şube adı) bir sekme. Seçili sekmenin panelinde kroki deseni üstüne düşen iğne, şube adı, iri adres ve yol tarifi bağlantısı. Tek adres varsa sekme şeridi basılmaz, tek panel kalır. Telefon · WhatsApp · e-posta · saat bütün şubelerin ortak kanalı olarak altta kart sırası. JS yoksa tüm şube panelleri alt alta. sube-harita-liste şube listesini harita + konuma göre sıralamayla kurar (koordinatlı, ayrı şema); bu modül YALNIZ kanal şemasından (konum ikonlu data satırı = şube) KLASÖR SEKMESİ: ortak sekme istemcisi (role=tab, ok tuşları), seçili sekmenin panelle birleştiği dosya sırtı (margin-block-end:-1px), panel başına kroki + düşen iğne animasyonu. Kanallar desing'den (adres · telefon · WhatsApp · e-posta · saat) + data satırları; etiketler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Kanal yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "folder_open",
+  "category": "contact",
+  "subCategory": "branch-tabs",
+  "tags": [
+    "contact",
+    "branches",
+    "tabs",
+    "folder",
+    "multi-address",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "adres": "",
+    "telefon": "",
+    "eposta": "",
+    "whatsapp": "",
+    "saat": "",
+    "haritaUrl": "",
+    "haritaGomme": "",
+    "waMesaj": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "ikon": "Material Symbols adı (kanal türü ikondan da anlaşılır: mail · call · location_on · schedule)",
+      "deger": "dil sözlüğü (görünen değer, zorunlu; eski `text`)",
+      "url": "bağlantı (boşsa e-posta/telefon/haritadan türetilir)",
+      "baslik": "dil sözlüğü (kanal etiketi)"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Hizmet Menü Tahtası — çerçeveli kara tahtada noktalı fiyat satırları",
+  "description": "Ahşap çerçeveli kara tahta: hizmetler/ürünler iki sütuna akan menü kalemleridir — ikon, ad, noktalı kılavuz çizgisi ve fiyat; altında kısa açıklama, «·» ile ayrılmış içerik/kapsam maddeleri ve bağlantı. İlk kalem desing `oneriEtiket` doluysa eğik «günün önerisi» etiketi taşır. Üzerine gelince ad tebeşirle altı çizilir. Mobilde tek sütun. hizmet-satir-tablo sütun hizalı karşılaştırma tablosu, hizmet-dev-liste afiş tipografili satırlardır; bu modül esnaf menü panosu dilidir — çerçeveli tahta zemin, CSS sütun akışı (columns), noktalı fiyat kılavuzu ve öneri etiketi; kart yok. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "menu_book",
+  "category": "hizmet",
+  "subCategory": "chalkboard-menu",
+  "tags": [
+    "hizmet",
+    "chalkboard",
+    "menu",
+    "columns",
+    "price",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-text, #111318)",
+    "text": "var(--mx-site-bg, #ffffff)",
+    "muted": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 78%, var(--mx-site-text, #111318))",
+    "kartBg": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 7%, transparent)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 18%, transparent)",
+    "accent": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 55%, var(--mx-site-bg, #ffffff))",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 45%, var(--mx-site-bg, #ffffff))",
+    "accentText": "var(--mx-site-text, #111318)",
+    "vurguBg": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 55%, var(--mx-site-bg, #ffffff))",
+    "vurguText": "var(--mx-site-text, #111318)",
+    "oneriEtiket": "",
+    "bgcolor": "var(--mx-site-text, #111318)",
+    "color": "var(--mx-site-bg, #ffffff)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "baslik": "hizmet adı — dil sözlüğü (zorunlu; eski `ad`)",
+      "metin": "kısa açıklama — dil sözlüğü (eski `ozet`)",
+      "maddeler": "kapsam maddeleri — dil sözlüğü dizisi",
+      "ikon": "Material Symbols adı",
+      "img": "görsel yolu",
+      "alt": "görsel alt metni — dil sözlüğü",
+      "fiyat": "fiyat / «…'den başlayan» — dil sözlüğü ya da düz metin",
+      "url": "detay sayfası bağlantısı",
+      "linkMetin": "bağlantı yazısı (yoksa desing `linkMetin` / eski `ctaLabel`, o da yoksa «Devamını oku»)"
+    }
+  }
+}
