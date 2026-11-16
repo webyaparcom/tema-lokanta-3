@@ -1,0 +1,29 @@
+{
+  "name": "Üç Kapı Lokantası",
+  "short_name": "Üç Kapı Loka",
+  "description": "Üç Kapı Lokantası: Bursa’da üç şubeli ev yemeği lokantası; şube adresleri, günün kara tahtası, mevsim takvimi ve örnek fiyatlar. Demo site; içerik kurgusaldır.",
+  "start_url": "/tr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#217880",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

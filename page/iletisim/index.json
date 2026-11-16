@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Şubeler",
+    "en": "Branches",
+    "ar": "الفروع"
+  },
+  "status": "play",
+  "category": "",
+  "id": "iletisim",
+  "url": "",
+  "path": "iletisim",
+  "index": 2,
+  "icon": "storefront",
+  "desing": {
+    "header": [],
+    "body": [
+      "h0sj97",
+      "k8mp01"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Üç şubenin adresleri, ortak telefon ve harita.",
+    "en": "Addresses of the three branches, shared phone and map.",
+    "ar": "عناوين الفروع الثلاثة والهاتف المشترك والخريطة."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Şubeler",
+    "en": "Branches",
+    "ar": "الفروع"
+  },
+  "keyword": {
+    "tr": "şube, adres, Bursa",
+    "en": "branch, address, Bursa",
+    "ar": "فرع، عنوان، بورصة"
+  },
+  "text": {},
+  "update": "2026-11-16T20:22:42.311Z",
+  "date": "2026-10-30"
+}
