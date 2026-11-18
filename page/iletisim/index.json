@@ -2,7 +2,9 @@
   "name": {
     "tr": "Şubeler",
     "en": "Branches",
-    "ar": "الفروع"
+    "ar": "الفروع",
+    "de": "Filialen",
+    "ru": "Филиалы"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Üç şubenin adresleri, ortak telefon ve harita.",
     "en": "Addresses of the three branches, shared phone and map.",
-    "ar": "عناوين الفروع الثلاثة والهاتف المشترك والخريطة."
+    "ar": "عناوين الفروع الثلاثة والهاتف المشترك والخريطة.",
+    "de": "Adressen der drei Filialen, gemeinsame Telefonnummer und Karte.",
+    "ru": "Адреса трёх филиалов, общий телефон и карта."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Şubeler",
     "en": "Branches",
-    "ar": "الفروع"
+    "ar": "الفروع",
+    "de": "Filialen",
+    "ru": "Филиалы"
   },
   "keyword": {
     "tr": "şube, adres, Bursa",
     "en": "branch, address, Bursa",
-    "ar": "فرع، عنوان، بورصة"
+    "ar": "فرع، عنوان، بورصة",
+    "de": "Filiale, Adresse, Bursa",
+    "ru": "филиал, адрес, Бурса"
   },
   "text": {},
   "update": "2026-11-16T20:22:42.311Z",

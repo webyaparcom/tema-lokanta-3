@@ -4,12 +4,16 @@
   "description": {
     "tr": "Üç Kapı Lokantası: Bursa’da üç şubeli ev yemeği lokantası; şube adresleri, günün kara tahtası, mevsim takvimi ve örnek fiyatlar. Demo site; içerik kurgusaldır.",
     "en": "Üç Kapı Lokantası: a home-cooking restaurant with three branches in Bursa; branch addresses, today’s chalkboard, a seasonal calendar and example prices. Demo site; content is fictional.",
-    "ar": "لوكانتا أوتش كابي: مطعم أكل منزلي له ثلاثة فروع في بورصة؛ عناوين الفروع ولوح اليوم وتقويم المواسم وأسعار نموذجية. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "لوكانتا أوتش كابي: مطعم أكل منزلي له ثلاثة فروع في بورصة؛ عناوين الفروع ولوح اليوم وتقويم المواسم وأسعار نموذجية. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Üç Kapı Lokantası: Restaurant mit Hausmannskost und drei Filialen in Bursa; Filialadressen, Tagesmenü an der Tafel, Saisonkalender und Beispielpreise. Demo-Seite; Inhalt ist fiktiv.",
+    "ru": "Üç Kapı Lokantası: ресторан домашней кухни с тремя филиалами в Бурсе; адреса филиалов, меню дня на доске, сезонный календарь и примерные цены. Демо-сайт; контент вымышленный."
   },
   "keyword": {
     "tr": "lokanta, ev yemeği, şube, Bursa, günün menüsü, Mudanya",
     "en": "restaurant, home cooking, branches, Bursa, daily menu, Mudanya",
-    "ar": "مطعم، أكل منزلي، فروع، بورصة، قائمة اليوم، مودانيا"
+    "ar": "مطعم، أكل منزلي، فروع، بورصة، قائمة اليوم، مودانيا",
+    "de": "Restaurant, Hausmannskost, Filialen, Bursa, Tageskarte, Mudanya",
+    "ru": "ресторан, домашняя еда, филиалы, Бурса, меню дня, Муданья"
   },
   "category": "Kurumsal",
   "name": "Üç Kapı Lokantası",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,
