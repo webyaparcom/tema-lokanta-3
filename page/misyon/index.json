@@ -3,17 +3,23 @@
   "name": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "description": {
     "tr": "Misyonumuz",
     "en": "Our mission",
-    "ar": "مهمتنا"
+    "ar": "مهمتنا",
+    "de": "Unsere Mission",
+    "ru": "Наша миссия"
   },
   "keyword": {
     "tr": "Misyon",
     "en": "mission, our mission, corporate responsibility",
-    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية"
+    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "path": "misyon",
   "icon": "flag",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Misyonumuz</h2>\n<p>Bursa’nın üç semtinde aynı tencereden, mevsiminde ve ölçülü fiyatla ev yemeği çıkarmak.</p>",
     "en": "<h2>Our mission</h2>\n<p>To serve home cooking from the same pot in three Bursa neighbourhoods, in season and fairly priced.</p>",
-    "ar": "<h2>مهمتنا</h2>\n<p>أن نقدّم الأكل المنزلي من القدر نفسه في ثلاثة أحياء من بورصة، في موسمه وبسعر معتدل.</p>"
+    "ar": "<h2>مهمتنا</h2>\n<p>أن نقدّم الأكل المنزلي من القدر نفسه في ثلاثة أحياء من بورصة، في موسمه وبسعر معتدل.</p>",
+    "de": "<h2>Unsere Mission</h2>\n<p>Haushaltsküche aus demselben Topf in drei Stadtteilen von Bursa anbieten – saisonal und zu fairen Preisen.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Готовить домашнюю еду из одной кастрюли в трех районах Бурсы, сезонно и по разумным ценам.</p>"
   },
   "title": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "date": "2026-11-16T20:19:42.288Z",
   "update": "2026-11-16T20:22:42.315Z",

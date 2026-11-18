@@ -5,12 +5,16 @@
       "name": {
         "tr": "Menü",
         "en": "Menu",
-        "ar": "القائمة"
+        "ar": "القائمة",
+        "de": "Menü",
+        "ru": "Меню"
       },
       "description": {
         "tr": "Günün tahtası ve misafir yorumları; fiyatlar örnektir.",
         "en": "Today’s board and guest reviews; prices are examples.",
-        "ar": "لوح اليوم وتقييمات الضيوف؛ الأسعار نموذجية."
+        "ar": "لوح اليوم وتقييمات الضيوف؛ الأسعار نموذجية.",
+        "de": "Die Tafel des Tages und Gästebewertungen; die Preise sind Beispiele.",
+        "ru": "Доска дня и отзывы гостей; цены примерные."
       },
       "path": "hizmetler",
       "icon": "restaurant_menu",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Mevsim",
         "en": "Seasons",
-        "ar": "المواسم"
+        "ar": "المواسم",
+        "de": "Saison",
+        "ru": "Сезон"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,14 +57,18 @@
       "description": {
         "tr": "Mevsim takvimi ve kurucunun mektubu (kurgusal).",
         "en": "The seasonal calendar and the founder’s letter (fictional).",
-        "ar": "تقويم المواسم ورسالة المؤسِّسة (افتراضي)."
+        "ar": "تقويم المواسم ورسالة المؤسِّسة (افتراضي).",
+        "de": "Saisonkalender und Brief des Gründers (fiktiv).",
+        "ru": "Сезонный календарь и письмо основателя (вымышленное)."
       }
     },
     {
       "name": {
         "tr": "Şubeler",
         "en": "Branches",
-        "ar": "الفروع"
+        "ar": "الفروع",
+        "de": "Filialen",
+        "ru": "Филиалы"
       },
       "status": "play",
       "id": "iletisim",
@@ -79,7 +89,9 @@
       "description": {
         "tr": "Üç şubenin adresleri, ortak telefon ve harita.",
         "en": "Addresses of the three branches, shared phone and map.",
-        "ar": "عناوين الفروع الثلاثة والهاتف المشترك والخريطة."
+        "ar": "عناوين الفروع الثلاثة والهاتف المشترك والخريطة.",
+        "de": "Adressen der drei Filialen, gemeinsame Telefonnummer und Karte.",
+        "ru": "Адреса трёх филиалов, общий телефон и карта."
       }
     }
   ],

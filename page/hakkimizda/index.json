@@ -2,7 +2,9 @@
   "name": {
     "tr": "Mevsim",
     "en": "Seasons",
-    "ar": "المواسم"
+    "ar": "المواسم",
+    "de": "Saison",
+    "ru": "Сезон"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Mevsim takvimi ve kurucunun mektubu (kurgusal).",
     "en": "The seasonal calendar and the founder’s letter (fictional).",
-    "ar": "تقويم المواسم ورسالة المؤسِّسة (افتراضي)."
+    "ar": "تقويم المواسم ورسالة المؤسِّسة (افتراضي).",
+    "de": "Saisonkalender und Brief des Gründers (fiktiv).",
+    "ru": "Сезонный календарь и письмо основателя (вымышленное)."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Mevsim",
     "en": "Seasons",
-    "ar": "المواسم"
+    "ar": "المواسم",
+    "de": "Saison",
+    "ru": "Сезон"
   },
   "keyword": {
     "tr": "mevsim, takvim",
     "en": "season, calendar",
-    "ar": "موسم، تقويم"
+    "ar": "موسم، تقويم",
+    "de": "Jahreszeit, Kalender",
+    "ru": "сезон, календарь"
   },
   "text": {},
   "update": "2026-11-16T20:22:42.307Z",

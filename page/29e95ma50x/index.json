@@ -3,17 +3,23 @@
   "name": {
     "tr": "Menü",
     "en": "Menu",
-    "ar": "القائمة"
+    "ar": "القائمة",
+    "de": "Menü",
+    "ru": "Меню"
   },
   "description": {
     "tr": "Günün tahtası ve misafir yorumları; fiyatlar örnektir.",
     "en": "Today’s board and guest reviews; prices are examples.",
-    "ar": "لوح اليوم وتقييمات الضيوف؛ الأسعار نموذجية."
+    "ar": "لوح اليوم وتقييمات الضيوف؛ الأسعار نموذجية.",
+    "de": "Die Tafel des Tages und Gästebewertungen; die Preise sind Beispiele.",
+    "ru": "Доска дня и отзывы гостей; цены примерные."
   },
   "keyword": {
     "tr": "günün menüsü, ev yemeği, fiyat",
     "en": "daily menu, home cooking, price",
-    "ar": "قائمة اليوم، أكل منزلي، سعر"
+    "ar": "قائمة اليوم، أكل منزلي، سعر",
+    "de": "Tagesmenü, Hausmannskost, Preis",
+    "ru": "Меню дня, домашняя еда, цена"
   },
   "path": "hizmetler",
   "icon": "restaurant_menu",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Menü",
     "en": "Menu",
-    "ar": "القائمة"
+    "ar": "القائمة",
+    "de": "Menü",
+    "ru": "Меню"
   },
   "date": "2026-11-16T20:19:42.430Z",
   "update": "2026-11-16T20:22:42.303Z"
